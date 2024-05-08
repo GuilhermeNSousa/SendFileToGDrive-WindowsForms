@@ -14,24 +14,17 @@ namespace SendFileToDriveWinForm
 {
     public class UploadDrive
     {
-        const string sIdPastaDestino = "Id da pasta desejada no Google Drive";
-        const string caminhoDoArquivoLocal = "Caminho para a pasta em que o arquivo está localizado";
-        const string caminhoDasCredenciais = "Caminho para a pasta em que a credencial em .json está localizada";
+    //    UserCredential credential = ObtemAutorização();
+    //    var service = CriaDivreService(credential);
+    //    string nomeDoArquivoNoDrive = "nomeArquivoNoDrive";
+    //    var fileMetadata = CriaArquivoNoDrive(nomeDoArquivoNoDrive, sIdPastaDestino);
 
-        //static void Main(string[] args)
-        //{
+    //    //ExcluiArquivosNaPasta(service, sIdPastaDestino);
 
-        //    UserCredential credential = ObtemAutorização();
-        //    var service = CriaDivreService(credential);
-        //    string nomeDoArquivoNoDrive = "nomeArquivoNoDrive";
-        //    var fileMetadata = CriaArquivoNoDrive(nomeDoArquivoNoDrive, sIdPastaDestino);
+    //    string sLink = UploadArquivoParaDrive(service, fileMetadata, nomeDoArquivoNoDrive);
 
-        //    //ExcluiArquivosNaPasta(service, sIdPastaDestino);
 
-        //    string sLink = UploadArquivoParaDrive(service, fileMetadata, nomeDoArquivoNoDrive);
-        //}
-
-        public UserCredential ObtemAutorização()
+        public UserCredential ObtemAutorização(string caminhoDasCredenciais)
         {
             try
             {
@@ -82,11 +75,8 @@ namespace SendFileToDriveWinForm
             return fileMetadata;
         }
 
-        public string UploadArquivoParaDrive(DriveService service, Google.Apis.Drive.v3.Data.File fileMetadata, string nomeDoArquivoNoDrive)
+        public void UploadArquivoParaDrive(DriveService service, Google.Apis.Drive.v3.Data.File fileMetadata, string sNomeArquivoLocal)
         {
-
-            var sNomeArquivoLocal = caminhoDoArquivoLocal + "SPDL - Lista de Ramais.pdf";
-
             using (var stream = new FileStream(sNomeArquivoLocal, FileMode.Open))
             {
                 FilesResource.CreateMediaUpload request;
@@ -94,15 +84,6 @@ namespace SendFileToDriveWinForm
                 request.Fields = "id";
                 request.Upload();
                 var file = request.ResponseBody;
-
-                Console.WriteLine($"Arquivo '{nomeDoArquivoNoDrive}' adicionado ao Google Drive com o ID: {file.Id}");
-
-                string LinkArquivo = $"https://drive.google.com/file/d/{file.Id}/view?usp=sharing";
-
-                Console.WriteLine($"Link para o arquivo: {LinkArquivo}\n");
-
-                return LinkArquivo;
-
             }
 
         }

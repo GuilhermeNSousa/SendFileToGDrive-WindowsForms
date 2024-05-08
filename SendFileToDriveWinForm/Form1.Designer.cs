@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sendFileBut = new System.Windows.Forms.Button();
             this.linkLabel = new System.Windows.Forms.Label();
-            this.IdBox = new System.Windows.Forms.TextBox();
+            this.linkBox = new System.Windows.Forms.TextBox();
             this.chooseFileLabel = new System.Windows.Forms.Label();
             this.fileBox = new System.Windows.Forms.TextBox();
             this.chooseFileBut = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.sendFileBut.TabIndex = 0;
             this.sendFileBut.Text = "Enviar arquivo";
             this.sendFileBut.UseVisualStyleBackColor = false;
+            this.sendFileBut.Click += new System.EventHandler(this.sendFileBut_Click);
             // 
             // linkLabel
             // 
@@ -63,17 +64,18 @@
             this.linkLabel.TabIndex = 1;
             this.linkLabel.Text = "Link da pasta no Drive";
             // 
-            // IdBox
+            // linkBox
             // 
-            this.IdBox.AccessibleDescription = "";
-            this.IdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdBox.ForeColor = System.Drawing.Color.DarkRed;
-            this.IdBox.Location = new System.Drawing.Point(50, 64);
-            this.IdBox.Multiline = true;
-            this.IdBox.Name = "IdBox";
-            this.IdBox.Size = new System.Drawing.Size(425, 36);
-            this.IdBox.TabIndex = 3;
-            this.IdBox.WordWrap = false;
+            this.linkBox.AccessibleDescription = "";
+            this.linkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkBox.ForeColor = System.Drawing.Color.DarkRed;
+            this.linkBox.Location = new System.Drawing.Point(50, 64);
+            this.linkBox.Multiline = true;
+            this.linkBox.Name = "linkBox";
+            this.linkBox.Size = new System.Drawing.Size(425, 36);
+            this.linkBox.TabIndex = 3;
+            this.linkBox.Text = "https://drive.google.com/drive/folders/1uyv0XWy9M9Bgak_GS6X9kF_N1_y4AdON";
+            this.linkBox.WordWrap = false;
             // 
             // chooseFileLabel
             // 
@@ -119,7 +121,7 @@
             this.Controls.Add(this.chooseFileBut);
             this.Controls.Add(this.fileBox);
             this.Controls.Add(this.chooseFileLabel);
-            this.Controls.Add(this.IdBox);
+            this.Controls.Add(this.linkBox);
             this.Controls.Add(this.linkLabel);
             this.Controls.Add(this.sendFileBut);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -136,7 +138,7 @@
 
         private System.Windows.Forms.Button sendFileBut;
         private System.Windows.Forms.Label linkLabel;
-        private System.Windows.Forms.TextBox IdBox;
+        private System.Windows.Forms.TextBox linkBox;
         private System.Windows.Forms.Label chooseFileLabel;
         private System.Windows.Forms.TextBox fileBox;
         private System.Windows.Forms.Button chooseFileBut;
