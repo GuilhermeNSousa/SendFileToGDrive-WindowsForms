@@ -28,33 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.sendFileBut = new System.Windows.Forms.Button();
+            this.linkLabel = new System.Windows.Forms.Label();
             this.IdBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.chooseFileLabel = new System.Windows.Forms.Label();
             this.fileBox = new System.Windows.Forms.TextBox();
             this.chooseFileBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // sendFileBut
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(97, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(340, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Enviar arquivo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.sendFileBut.BackColor = System.Drawing.Color.Gainsboro;
+            this.sendFileBut.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.sendFileBut.FlatAppearance.BorderSize = 0;
+            this.sendFileBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendFileBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendFileBut.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sendFileBut.Location = new System.Drawing.Point(97, 208);
+            this.sendFileBut.Name = "sendFileBut";
+            this.sendFileBut.Size = new System.Drawing.Size(340, 51);
+            this.sendFileBut.TabIndex = 0;
+            this.sendFileBut.Text = "Enviar arquivo";
+            this.sendFileBut.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // linkLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID da pasta no Drive";
+            this.linkLabel.AutoSize = true;
+            this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel.Location = new System.Drawing.Point(45, 36);
+            this.linkLabel.Name = "linkLabel";
+            this.linkLabel.Size = new System.Drawing.Size(205, 25);
+            this.linkLabel.TabIndex = 1;
+            this.linkLabel.Text = "Link da pasta no Drive";
             // 
             // IdBox
             // 
@@ -67,15 +73,15 @@
             this.IdBox.TabIndex = 3;
             this.IdBox.WordWrap = false;
             // 
-            // label2
+            // chooseFileLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Escolher arquivo";
+            this.chooseFileLabel.AutoSize = true;
+            this.chooseFileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooseFileLabel.Location = new System.Drawing.Point(45, 120);
+            this.chooseFileLabel.Name = "chooseFileLabel";
+            this.chooseFileLabel.Size = new System.Drawing.Size(157, 25);
+            this.chooseFileLabel.TabIndex = 4;
+            this.chooseFileLabel.Text = "Escolher arquivo";
             // 
             // fileBox
             // 
@@ -103,16 +109,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(533, 297);
             this.Controls.Add(this.chooseFileBut);
             this.Controls.Add(this.fileBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.chooseFileLabel);
             this.Controls.Add(this.IdBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.linkLabel);
+            this.Controls.Add(this.sendFileBut);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,10 +129,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button sendFileBut;
+        private System.Windows.Forms.Label linkLabel;
         private System.Windows.Forms.TextBox IdBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label chooseFileLabel;
         private System.Windows.Forms.TextBox fileBox;
         private System.Windows.Forms.Button chooseFileBut;
     }
