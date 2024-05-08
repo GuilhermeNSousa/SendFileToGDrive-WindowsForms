@@ -23,5 +23,20 @@ namespace SendFileToDriveWinForm
         {
 
         }
+
+        private void chooseFileBut_Click(object sender, EventArgs e)
+        {
+            using(var ofd =  new OpenFileDialog())
+            {
+                ofd.InitialDirectory = @"Desktop\";
+                ofd.Filter = "All Files (*.*) | *.*";
+                ofd.RestoreDirectory = true;
+
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    fileBox.Text = ofd.FileName;
+                }
+            }
+        }
     }
 }

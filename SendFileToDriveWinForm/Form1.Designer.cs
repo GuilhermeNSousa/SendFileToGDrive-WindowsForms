@@ -43,7 +43,7 @@
             this.sendFileBut.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.sendFileBut.FlatAppearance.BorderSize = 0;
             this.sendFileBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendFileBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendFileBut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendFileBut.ForeColor = System.Drawing.SystemColors.ControlText;
             this.sendFileBut.Location = new System.Drawing.Point(97, 208);
             this.sendFileBut.Name = "sendFileBut";
@@ -55,10 +55,11 @@
             // linkLabel
             // 
             this.linkLabel.AutoSize = true;
-            this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel.ForeColor = System.Drawing.Color.White;
             this.linkLabel.Location = new System.Drawing.Point(45, 36);
             this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(205, 25);
+            this.linkLabel.Size = new System.Drawing.Size(210, 24);
             this.linkLabel.TabIndex = 1;
             this.linkLabel.Text = "Link da pasta no Drive";
             // 
@@ -66,6 +67,7 @@
             // 
             this.IdBox.AccessibleDescription = "";
             this.IdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdBox.ForeColor = System.Drawing.Color.DarkRed;
             this.IdBox.Location = new System.Drawing.Point(50, 64);
             this.IdBox.Multiline = true;
             this.IdBox.Name = "IdBox";
@@ -76,17 +78,19 @@
             // chooseFileLabel
             // 
             this.chooseFileLabel.AutoSize = true;
-            this.chooseFileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooseFileLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooseFileLabel.ForeColor = System.Drawing.Color.White;
             this.chooseFileLabel.Location = new System.Drawing.Point(45, 120);
             this.chooseFileLabel.Name = "chooseFileLabel";
-            this.chooseFileLabel.Size = new System.Drawing.Size(157, 25);
+            this.chooseFileLabel.Size = new System.Drawing.Size(238, 24);
             this.chooseFileLabel.TabIndex = 4;
-            this.chooseFileLabel.Text = "Escolher arquivo";
+            this.chooseFileLabel.Text = "Caminho do(s) arquivo(s)";
             // 
             // fileBox
             // 
             this.fileBox.AccessibleDescription = "";
             this.fileBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileBox.ForeColor = System.Drawing.Color.DarkRed;
             this.fileBox.Location = new System.Drawing.Point(50, 148);
             this.fileBox.Multiline = true;
             this.fileBox.Name = "fileBox";
@@ -104,6 +108,7 @@
             this.chooseFileBut.Text = "...";
             this.chooseFileBut.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chooseFileBut.UseVisualStyleBackColor = true;
+            this.chooseFileBut.Click += new System.EventHandler(this.chooseFileBut_Click);
             // 
             // Form1
             // 
