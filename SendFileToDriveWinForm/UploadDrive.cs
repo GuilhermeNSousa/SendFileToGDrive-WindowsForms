@@ -14,16 +14,6 @@ namespace SendFileToDriveWinForm
 {
     public class UploadDrive
     {
-    //    UserCredential credential = ObtemAutorização();
-    //    var service = CriaDivreService(credential);
-    //    string nomeDoArquivoNoDrive = "nomeArquivoNoDrive";
-    //    var fileMetadata = CriaArquivoNoDrive(nomeDoArquivoNoDrive, sIdPastaDestino);
-
-    //    //ExcluiArquivosNaPasta(service, sIdPastaDestino);
-
-    //    string sLink = UploadArquivoParaDrive(service, fileMetadata, nomeDoArquivoNoDrive);
-
-
         public UserCredential ObtemAutorização(string caminhoDasCredenciais)
         {
             try
@@ -80,12 +70,10 @@ namespace SendFileToDriveWinForm
             using (var stream = new FileStream(sNomeArquivoLocal, FileMode.Open))
             {
                 FilesResource.CreateMediaUpload request;
-                request = service.Files.Create(fileMetadata, stream, "application/pdf");
+                request = service.Files.Create(fileMetadata, stream, "application/octet-stream");
                 request.Fields = "id";
                 request.Upload();
-                var file = request.ResponseBody;
             }
-
         }
 
         public void ExcluiArquivosNaPasta(DriveService service, string idPastaDestino)
