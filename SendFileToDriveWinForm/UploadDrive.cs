@@ -14,6 +14,11 @@ namespace SendFileToDriveWinForm
 {
     public class UploadDrive
     {
+        //O CÓDIGO SÓ FUNCIONARÁ SE O ARQUIVO .JSON COM AS CREDENCIAIS
+        //ESTIVER DENTRO DO PATH:
+        //"UploadFileToGoogleDrive-WindowsForms\SendFileToDriveWinForm\bin\Debug"
+
+        //Abre uma tela no navegador pedindo autorização com a sua conta Google
         public UserCredential ObtemAutorização(string caminhoDasCredenciais)
         {
             try
@@ -24,7 +29,8 @@ namespace SendFileToDriveWinForm
 
                 using (var stream = new FileStream(caminhoDasCredenciais, FileMode.Open, FileAccess.Read))
                 {
-                    // Pede autenticação ou carrega a última autenticação armazenada pro userName
+                    // Pede autenticação ou
+                    // carrega a última autenticação armazenada (na pasta AppData) pro userName
                     credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.FromStream(stream).Secrets,
                             new[] { DriveService.ScopeConstants.DriveFile },
@@ -43,6 +49,7 @@ namespace SendFileToDriveWinForm
             }
         }
 
+        //Cria um serviço da Drive API
         public DriveService CriaDivreService(UserCredential credential)
         {
             var service = new DriveService(new BaseClientService.Initializer()
@@ -54,6 +61,7 @@ namespace SendFileToDriveWinForm
             return service;
         }
 
+        //Cria um arquivo na pasta, sem realizar o upload
         public Google.Apis.Drive.v3.Data.File CriaArquivoNoDrive(string nomeDoArquivoNoDrive, string idPastaDestino)
         {
             var fileMetadata = new Google.Apis.Drive.v3.Data.File()
@@ -65,6 +73,7 @@ namespace SendFileToDriveWinForm
             return fileMetadata;
         }
 
+        //Upload do arquivo criado para a pasta
         public void UploadArquivoParaDrive(DriveService service, Google.Apis.Drive.v3.Data.File fileMetadata, string sNomeArquivoLocal)
         {
             using (var stream = new FileStream(sNomeArquivoLocal, FileMode.Open))
@@ -76,6 +85,7 @@ namespace SendFileToDriveWinForm
             }
         }
 
+        //Exclui todos os arquivos de dentro da pasta
         public void ExcluiArquivosNaPasta(DriveService service, string idPastaDestino)
         {
             FilesResource.ListRequest listRequest = service.Files.List();

@@ -27,6 +27,7 @@ namespace SendFileToDriveWinForm
 
         private void chooseFileBut_Click(object sender, EventArgs e)
         {
+            //Abre uma janela para a seleção do(s) arquivo(s)
             using(var ofd =  new OpenFileDialog())
             {
                 ofd.InitialDirectory = @"Desktop\";
@@ -45,20 +46,33 @@ namespace SendFileToDriveWinForm
             UploadDrive uploadDrive = new UploadDrive();
             string sIdPastaDestino = String.Empty;
 
-            bool validaLink = !linkBox.Text.StartsWith("https://drive.google.com/drive/folders/") && !linkBox.Text.StartsWith("drive.google.com/drive/folders/") && linkBox.Text != "" ? false : true;
+            bool validaLink = !linkBox.Text.StartsWith("https://drive.google.com/drive/folders/") && !linkBox.Text.StartsWith("https://drive.google.com/drive/u/1/folders/") && !linkBox.Text.StartsWith("drive.google.com/drive/u/1/folders/") && !linkBox.Text.StartsWith("drive.google.com/drive/folders/") && linkBox.Text != "" ? false : true;
 
-            if (linkBox.Text.StartsWith("https://drive.google.com/drive/folders"))
+            //Verifica o formato do link da pasta
+            if (linkBox.Text.StartsWith("https://drive.google.com/drive"))
             {
                 string[] link = linkBox.Text.Split('/');
-                sIdPastaDestino = link[5]; 
+                sIdPastaDestino = link[5];
+                
+                if (linkBox.Text.Contains("/u/1"))
+                {
+                    sIdPastaDestino = link[7];
+                }
             }
 
-            else if (linkBox.Text.StartsWith("drive.google.com/drive/folders"))
+            //Verifica o formato do link da pasta
+            else if (linkBox.Text.StartsWith("drive.google.com/drive"))
             {
                 string[] link = linkBox.Text.Split('/');
                 sIdPastaDestino = link[3];
+
+                if (linkBox.Text.Contains("/u/1"))
+                {
+                    sIdPastaDestino = link[5];
+                }
             }
 
+            //Verifica o formato do link da pasta
             else if (!validaLink)
             {
                 MessageBox.Show("Insira um link válido!", "Link inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
