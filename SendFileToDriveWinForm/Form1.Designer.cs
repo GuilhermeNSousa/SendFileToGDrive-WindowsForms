@@ -45,9 +45,10 @@
             this.sendFileBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendFileBut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendFileBut.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.sendFileBut.Location = new System.Drawing.Point(97, 208);
+            this.sendFileBut.Location = new System.Drawing.Point(73, 169);
+            this.sendFileBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sendFileBut.Name = "sendFileBut";
-            this.sendFileBut.Size = new System.Drawing.Size(340, 51);
+            this.sendFileBut.Size = new System.Drawing.Size(255, 41);
             this.sendFileBut.TabIndex = 0;
             this.sendFileBut.Text = "Enviar arquivo";
             this.sendFileBut.UseVisualStyleBackColor = false;
@@ -58,9 +59,10 @@
             this.linkLabel.AutoSize = true;
             this.linkLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel.ForeColor = System.Drawing.Color.White;
-            this.linkLabel.Location = new System.Drawing.Point(45, 36);
+            this.linkLabel.Location = new System.Drawing.Point(34, 29);
+            this.linkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(210, 24);
+            this.linkLabel.Size = new System.Drawing.Size(167, 19);
             this.linkLabel.TabIndex = 1;
             this.linkLabel.Text = "Link da pasta no Drive";
             // 
@@ -69,12 +71,12 @@
             this.linkBox.AccessibleDescription = "";
             this.linkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkBox.ForeColor = System.Drawing.Color.DarkRed;
-            this.linkBox.Location = new System.Drawing.Point(50, 64);
+            this.linkBox.Location = new System.Drawing.Point(38, 52);
+            this.linkBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.linkBox.Multiline = true;
             this.linkBox.Name = "linkBox";
-            this.linkBox.Size = new System.Drawing.Size(425, 36);
+            this.linkBox.Size = new System.Drawing.Size(320, 30);
             this.linkBox.TabIndex = 3;
-            this.linkBox.Text = "https://drive.google.com/drive/folders/1uyv0XWy9M9Bgak_GS6X9kF_N1_y4AdON";
             this.linkBox.WordWrap = false;
             // 
             // chooseFileLabel
@@ -82,9 +84,10 @@
             this.chooseFileLabel.AutoSize = true;
             this.chooseFileLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chooseFileLabel.ForeColor = System.Drawing.Color.White;
-            this.chooseFileLabel.Location = new System.Drawing.Point(45, 120);
+            this.chooseFileLabel.Location = new System.Drawing.Point(34, 98);
+            this.chooseFileLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.chooseFileLabel.Name = "chooseFileLabel";
-            this.chooseFileLabel.Size = new System.Drawing.Size(238, 24);
+            this.chooseFileLabel.Size = new System.Drawing.Size(191, 19);
             this.chooseFileLabel.TabIndex = 4;
             this.chooseFileLabel.Text = "Caminho do(s) arquivo(s)";
             // 
@@ -93,19 +96,21 @@
             this.fileBox.AccessibleDescription = "";
             this.fileBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileBox.ForeColor = System.Drawing.Color.DarkRed;
-            this.fileBox.Location = new System.Drawing.Point(50, 148);
+            this.fileBox.Location = new System.Drawing.Point(38, 120);
+            this.fileBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fileBox.Multiline = true;
             this.fileBox.Name = "fileBox";
-            this.fileBox.Size = new System.Drawing.Size(371, 36);
+            this.fileBox.Size = new System.Drawing.Size(279, 30);
             this.fileBox.TabIndex = 5;
             this.fileBox.WordWrap = false;
             // 
             // chooseFileBut
             // 
             this.chooseFileBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseFileBut.Location = new System.Drawing.Point(427, 148);
+            this.chooseFileBut.Location = new System.Drawing.Point(320, 120);
+            this.chooseFileBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chooseFileBut.Name = "chooseFileBut";
-            this.chooseFileBut.Size = new System.Drawing.Size(48, 36);
+            this.chooseFileBut.Size = new System.Drawing.Size(36, 29);
             this.chooseFileBut.TabIndex = 6;
             this.chooseFileBut.Text = "...";
             this.chooseFileBut.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -114,10 +119,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(533, 297);
+            this.ClientSize = new System.Drawing.Size(400, 241);
             this.Controls.Add(this.chooseFileBut);
             this.Controls.Add(this.fileBox);
             this.Controls.Add(this.chooseFileLabel);
@@ -125,6 +130,7 @@
             this.Controls.Add(this.linkLabel);
             this.Controls.Add(this.sendFileBut);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Envio de arquivo para o Drive";

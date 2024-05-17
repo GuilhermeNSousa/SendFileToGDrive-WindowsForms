@@ -14,7 +14,6 @@ namespace SendFileToDriveWinForm
 {
     public partial class Form1 : Form
     {
-        //UploadDrive uploadDrive = new UploadDrive();
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +29,7 @@ namespace SendFileToDriveWinForm
             //Abre uma janela para a seleção do(s) arquivo(s)
             using(var ofd =  new OpenFileDialog())
             {
-                ofd.InitialDirectory = @"Desktop\";
+                ofd.InitialDirectory = @"C:\temp\";
                 ofd.Filter = "All Files (*.*) | *.*";
                 ofd.RestoreDirectory = true;
 
@@ -90,7 +89,7 @@ namespace SendFileToDriveWinForm
                     UserCredential credential = uploadDrive.ObtemAutorização(caminhoDasCredenciais);
                     DriveService service = uploadDrive.CriaDivreService(credential);
 
-                    string nomeDoArquivoNoDrive = "nomeArquivoNoDrive";
+                    string nomeDoArquivoNoDrive = "Arquivo_Enviado";
 
                     var fileMetadata = uploadDrive.CriaArquivoNoDrive(nomeDoArquivoNoDrive, sIdPastaDestino);
 
