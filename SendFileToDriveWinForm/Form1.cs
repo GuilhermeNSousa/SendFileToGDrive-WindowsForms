@@ -83,7 +83,7 @@ namespace SendFileToDriveWinForm
                 //Se o link da pasta e o arquivo forem válidos, envie para o Drive
                 if (linkBox.Text != "" && System.IO.File.Exists(fileBox.Text) == true && validaLink)
                 {
-                    string caminhoDasCredenciais = "client_secret_790542996681-o1bs8eh4s1h2a8m8l4gu5j4adt5ihf2d.apps.googleusercontent.com.json";
+                    string caminhoDasCredenciais = "NomeDoArquivoDeCredenciais";
                     string caminhoDoArquivoLocal = fileBox.Text;
 
                     UserCredential credential = uploadDrive.ObtemAutorização(caminhoDasCredenciais);
